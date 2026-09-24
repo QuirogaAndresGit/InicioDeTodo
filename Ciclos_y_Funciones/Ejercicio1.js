@@ -1,0 +1,9 @@
+const multiplicar = (multiplicando, multiplicador) => multiplicando * multiplicador;
+function mostrarTabla(numero) {
+    for (let i = 1; i <= 10; i++) {
+        let producto = multiplicar(numero, i);
+        console.log(`${numero} x ${i} = ${producto}`);
+    }
+}
+let numeroUsuario = parseInt(prompt("Número:"));
+mostrarTabla(numeroUsuario);
