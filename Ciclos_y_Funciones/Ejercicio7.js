@@ -1,4 +1,7 @@
-const tieneDescuento = (kilos) => kilos > 10;
+function tieneDescuento(kilos) {
+    return kilos > 10;
+}
+
 function calcularTotalCliente(kilos, precioKilo) {
     let subtotal = kilos * precioKilo;
     if (tieneDescuento(kilos)) {
@@ -6,13 +9,16 @@ function calcularTotalCliente(kilos, precioKilo) {
     }
     return subtotal;
 }
+
 let precioKilo = parseFloat(prompt("Precio por kilo:"));
 let totalRecaudado = 0;
 let clientesConDescuento = 0;
+
 for (let i = 1; i <= 15; i++) {
     let kilos = parseFloat(prompt(`Kilos cliente ${i}:`));
     let totalPagar = calcularTotalCliente(kilos, precioKilo);
     totalRecaudado += totalPagar;
+
     if (tieneDescuento(kilos)) {
         clientesConDescuento++;
         console.log(`Cliente ${i} paga: ${totalPagar} (con descuento)`);
@@ -20,5 +26,6 @@ for (let i = 1; i <= 15; i++) {
         console.log(`Cliente ${i} paga: ${totalPagar}`);
     }
 }
+
 console.log(`Total recaudado: ${totalRecaudado}`);
 console.log(`Clientes con descuento: ${clientesConDescuento}`);
